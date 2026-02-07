@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For My Future Partner ❤️</title>
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- AOS Animation Library CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary-color: #ff2e63;
+      --secondary-color: #08d9d6;
+      --dark-bg: #1a1a2e;
+      --glass-bg: rgba(255, 255, 255, 0.08);
+      --glass-border: rgba(255, 255, 255, 0.15);
+      --text-color: #eaeaea;
+    }
+
+    body {
+      background-color: var(--dark-bg);
+      color: var(--text-color);
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      /* Animated Gradient Background */
+      background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1,
+    h2,
+    h3,
+    .cursive {
+      font-family: 'Great Vibes', cursive;
+      font-weight: 400;
+    }
+
+    /* --- Scrollbar Customization --- */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1a1a2e;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: var(--primary-color);
+      border-radius: 4px;
+    }
+
+    /* --- Glassmorphism Utilities --- */
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid var(--glass-border);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    /* --- Music Control Button --- */
+    .music-control {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(255, 46, 99, 0.5);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+
+    .music-control:hover {
+      transform: scale(1.1);
+    }
+
+    .music-spin {
+      animation: spin 3s linear infinite;
+    }
+
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* --- Loading Screen --- */
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #111;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.8s ease;
+    }
+
+    .heart-loader {
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      transform: rotate(45deg);
+      animation: heartbeat 1.2s infinite;
+      position: relative;
+    }
+
+    .heart-loader::before,
+    .heart-loader::after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      position: absolute;
+    }
+
+    .heart-loader::before {
+      left: -30px;
+    }
+
+    .heart-loader::after {
+      top: -30px;
+    }
+
+    @keyframes heartbeat {
+      0% {
+        transform: rotate(45deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(45deg) scale(1.15);
+      }
+
+      100% {
+        transform: rotate(45deg) scale(1);
+      }
+    }
+
+    /* --- Hero Section --- */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      padding-top: 60px;
+    }
+
+    .hero h1 {
+      position: relative;
+      font-family: 'Montserrat', sans-serif;
+      overflow: hidden;
+    }
+
+    .hero h1::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg,
+          transparent,
+          rgba(255, 255, 255, 0.5),
+          transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+
+      50% {
+        left: 100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+
+
+    .typewriter-cursor {
+      display: inline-block;
+      width: 3px;
+      background-color: white;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        opacity: 0;
+      }
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      animation: bounce 2s infinite;
+      color: white;
+      font-size: 2rem;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    @keyframes bounce {
+
+      0%,
+      20%,
+      50%,
+      80%,
+      100% {
+        transform: translateY(0);
+      }
+
+      40% {
+        transform: translateY(-15px);
+      }
+
+      60% {
+        transform: translateY(-7px);
+      }
+    }
+
+    /* --- Polaroid Gallery --- */
+    .polaroid {
+      background: white;
+      padding: 12px 12px 40px 12px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      transform: rotate(var(--rotation));
+      width: 100%;
+      max-width: 280px;
+      margin: 20px auto;
+      cursor: pointer;
+    }
+
+    .polaroid img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 2px;
+      filter: sepia(20%) contrast(110%);
+      transition: filter 0.3s;
+    }
+
+    .polaroid:hover {
+      transform: scale(1.1) rotate(0deg) !important;
+      z-index: 10;
+      box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+    }
+
+    .polaroid:hover img {
+      filter: sepia(0%) contrast(100%);
+    }
+
+    .polaroid p {
+      color: #333;
+      font-family: 'Great Vibes', cursive;
+      font-size: 1.8rem;
+      text-align: center;
+      margin-top: 15px;
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      left: 0;
+    }
+
+    /* --- 3D Tilt Cards --- */
+    .tilt-card {
+      transform-style: preserve-3d;
+      transform: perspective(1000px);
+      cursor: pointer;
+      height: 100%;
+    }
+
+    .tilt-inner {
+      padding: 40px 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+      border-radius: 20px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      transition: transform 0.1s;
+    }
+
+    .tilt-icon {
+      font-size: 3.5rem;
+      color: var(--secondary-color);
+      margin-bottom: 20px;
+      transform: translateZ(50px);
+      text-shadow: 0 0 15px var(--secondary-color);
+    }
+
+    .tilt-content h3 {
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .tilt-content p {
+      font-size: 1rem;
+      color: #ddd;
+      margin-top: 10px;
+    }
+
+    /* --- Proposal Section --- */
+    .proposal-section {
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 5;
+      padding-bottom: 50px;
+    }
+
+    .btn-group-custom {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-proposal {
+      padding: 18px 50px;
+      font-size: 1.8rem;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #ff2e63, #ff577f);
+      border: none;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      box-shadow: 0 0 25px rgba(255, 46, 99, 0.6);
+      transition: all 0.3s;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    .btn-proposal:hover {
+      transform: scale(1.05) translateY(-3px);
+      box-shadow: 0 10px 30px rgba(255, 46, 99, 0.8);
+    }
+
+    .btn-proposal::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        left: -100%;
+      }
+
+      20% {
+        left: 100%;
+      }
+
+      100% {
+        left: 100%;
+      }
+    }
+
+    .btn-no {
+      padding: 15px 40px;
+      font-size: 1.5rem;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      transition: all 0.2s;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .btn-no:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* --- Confetti Canvas --- */
+    #confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    /* --- Floating Particles --- */
+    .particle {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      animation: floatUp linear infinite;
+      bottom: -50px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      to {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+
+      .polaroid img {
+        height: 220px;
+      }
+
+      .btn-proposal {
+        font-size: 1.5rem;
+        padding: 15px 35px;
+      }
+
+      .btn-no {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+      }
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <!-- Confetti Canvas -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <!-- Audio Player -->
+  <audio id="love-song" loop>
+    <!-- Gentle romantic track -->
+    <source
+      src="https://cdn.pixabay.com/download/audio/2022/10/25/audio_2420249320.mp3?filename=romantic-piano-124974.mp3"
+      type="audio/mpeg">
+  </audio>
+
+  <!-- Music Toggle Button -->
+  <button id="music-btn" class="music-control" style="display: none;">
+    <i class="fas fa-music"></i>
+  </button>
+
+  <!-- Loader -->
+  <div id="loader">
+    <div class="heart-loader"></div>
+    <h4 class="mt-4 text-white cursive">Loading Proposal...</h4>
+    <p class="text-white-50 small mb-4">Please turn up your volume 🎧</p>
+    <button id="start-btn" class="btn btn-outline-light rounded-pill px-5 py-2 fw-bold">
+      Tap to Start <i class="fas fa-heart ms-2"></i>
+    </button>
+  </div>
+
+  <!-- Floating Particles Background Container -->
+  <div id="particles-container" style="position:fixed; inset:0; pointer-events:none; z-index:0;"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top glass-panel mx-3 mt-3 py-3">
+    <div class="container">
+      <a class="navbar-brand cursive fs-3" href="#">My Love <i class="fas fa-heart text-danger"></i></a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link text-white" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#memories">Memories</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#reasons">Why You</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#proposal">The Question</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div data-aos="zoom-in" data-aos-duration="1500">
+      <h2 class="display-5 mb-2 text-white fw-light">Happy Propose Day</h2>
+      <h1 class="display-1 fw-bold">To My <span id="typewriter"></span></h1>
+      <p class="lead mt-4 text-white-50 px-3">I have gathered the courage to ask you something important.</p>
+      <P class="lead mt-4 text-white-50 px-3"> I LOVE YOU</P>
+    </div>
+    <a href="#memories" class="scroll-down"><i class="fas fa-chevron-down"></i></a>
+  </section>
+
+  <!-- Memories Section (Polaroid Style) -->
+  <section id="memories" class="py-5 container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="cursive display-4 text-white">My Memory</h2>
+      <div class="w-25 mx-auto bg-white" style="height: 2px;"></div>
+    </div>
+
+    <div class="row justify-content-center">
+      <!-- Photo 1 -->
+      <div class="col-md-4 col-sm-6 mb-5" data-aos="flip-left">
+        <div class="polaroid" style="--rotation: -5deg;">
+          <img src="img1.jpg" alt="Memory 1">
+        </div>
+      </div>
+      <!-- Photo 2 -->
+      <div class="col-md-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-delay="100">
+        <div class="polaroid" style="--rotation: 3deg;">
+          <img style="justify-content: center;" src="img2.jpeg" alt="Memory 2">
+        </div>
+      </div>
+      <!-- Photo 3 -->
+      <div class="col-md-4 col-sm-6 mb-5" data-aos="flip-left" data-aos-delay="200">
+        <div class="polaroid" style="--rotation: -3deg;">
+          <img src="img3.jpg" alt="Memory 3">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reasons Section (3D Tilt Cards) -->
+  <section id="reasons" class="py-5 container">
+    <div class="text-center mb-5" data-aos="fade-up">
+      <h2 class="cursive display-4 text-white">Why I'm Asking</h2>
+    </div>
+
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="tilt-card h-100" data-tilt>
+          <div class="tilt-inner">
+            <i class="fas fa-infinity tilt-icon"></i>
+            <h3 class="tilt-content">The Future</h3>
+            <p class="text-white-50 tilt-content">I see you in every chapter of my life.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="tilt-card h-100" data-tilt>
+          <div class="tilt-inner">
+            <i class="fas fa-hand-holding-heart tilt-icon"></i>
+            <h3 class="tilt-content">Your Heart</h3>
+            <p class="text-white-50 tilt-content">Your kindness and love make me want to be a better person.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="tilt-card h-100" data-tilt>
+          <div class="tilt-inner">
+            <i class="fas fa-ring tilt-icon"></i>
+            <h3 class="tilt-content">Commitment</h3>
+            <p class="text-white-50 tilt-content">I am ready to commit to you, today and always.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Proposal Section -->
+  <section id="proposal" class="proposal-section text-center px-3">
+    <div class="hey glass-panel p-5 d-inline-block" data-aos="zoom-in-up" style="background-image: url(bg.jpg); background-repeat: no-repeat; background-size: cover; max-width: 600px; width: 100%;">
+      <h2 class="cursive display-3 mb-4">So...</h2>
+      <p class="lead mb-5 text-white">Will you do me the honor of being mine forever? <br> I LOVE YOU </p>
+
+      <div class="btn-group-custom">
+        <button class="btn-proposal" onclick="yesClick()">
+          YES, I'M YOURS! ❤️
+        </button>
+
+        <!-- The No Button -->
+        <button id="noBtn" class="btn-no" onmouseover="moveNo()" ontouchstart="moveNo()">
+          No
+        </button>
+      </div>
+
+      <p id="success-msg" class="mt-4 text-warning fw-bold fs-4"
+        style="display:none; opacity:0; transition:opacity 1s;">
+        I LOVE YOU SO MUCH!
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center py-4 text-white-50" style="position:relative; z-index: 2;">
+    <p>Proposing with all my heart.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    /********* CHANGE DETAILS HERE *********/
+    const herName = "ANI🥰😉";        // Her name
+    const yourName = "BALAJI";     // Your name
+    const phoneNumber = "916383559277"; // WhatsApp number (91**********)
+    /****************************************/
+
+    // Initialize AOS
+    AOS.init({
+      once: true,
+      offset: 100,
+      duration: 800
+    });
+
+    // --- 1. Loading Screen & Audio ---
+    const loader = document.getElementById('loader');
+    const startBtn = document.getElementById('start-btn');
+    const audio = document.getElementById('love-song');
+    const musicBtn = document.getElementById('music-btn');
+    const musicIcon = musicBtn.querySelector('i');
+    let isPlaying = false;
+
+    startBtn.addEventListener('click', () => {
+      audio.play().then(() => {
+        isPlaying = true;
+        musicBtn.style.display = 'flex';
+        musicIcon.classList.add('music-spin');
+        musicIcon.classList.remove('fa-music');
+        musicIcon.classList.add('fa-compact-disc');
+      }).catch(e => console.log("Audio play failed (interaction required):", e));
+
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none';
+      }, 800);
+
+      // Trigger typewriter
+      typeWriter();
+    });
+
+    // Music Toggle
+    musicBtn.addEventListener('click', () => {
+      if (isPlaying) {
+        audio.pause();
+        musicIcon.classList.remove('music-spin', 'fa-compact-disc');
+        musicIcon.classList.add('fa-music');
+      } else {
+        audio.play();
+        musicIcon.classList.add('music-spin', 'fa-compact-disc');
+        musicIcon.classList.remove('fa-music');
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // --- 2. Typewriter Effect ---
+    const typeText = herName;
+    const typeContainer = document.getElementById('typewriter');
+    let typeIndex = 0;
+
+    function typeWriter() {
+      if (typeIndex < typeText.length) {
+        typeContainer.innerHTML += typeText.charAt(typeIndex);
+        typeIndex++;
+        setTimeout(typeWriter, 150);
+      }
+    }
+
+    // --- 3. Floating Background Particles ---
+    const particlesContainer = document.getElementById('particles-container');
+    for (let i = 0; i < 20; i++) {
+      const span = document.createElement('span');
+      span.classList.add('particle');
+      const size = Math.random() * 10 + 5;
+      span.style.width = `${size}px`;
+      span.style.height = `${size}px`;
+      span.style.left = `${Math.random() * 100}%`;
+      span.style.animationDuration = `${Math.random() * 10 + 10}s`;
+      span.style.animationDelay = `${Math.random() * 5}s`;
+      particlesContainer.appendChild(span);
+    }
+
+    // --- 4. Canvas Fireworks & Confetti Logic ---
+    const canvas = document.getElementById("confetti-canvas");
+    const ctx = canvas.getContext("2d");
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let fwParticles = [];
+
+    function createFirework(x, y) {
+      for (let i = 0; i < 50; i++) {
+        fwParticles.push({
+          x: x,
+          y: y,
+          vx: (Math.random() - 0.5) * 10,
+          vy: (Math.random() - 0.5) * 10,
+          life: 100 + Math.random() * 50,
+          color: `hsl(${Math.random() * 360}, 100%, 50%)`,
+          size: Math.random() * 4 + 2
+        });
+      }
+    }
+
+    function animateFireworks() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      fwParticles.forEach((p, i) => {
+        ctx.fillStyle = p.color;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.fill();
+
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.05; // Gravity
+        p.life -= 1.5;
+        p.size *= 0.96; // Shrink
+
+        if (p.life <= 0 || p.size <= 0.1) {
+          fwParticles.splice(i, 1);
+        }
+      });
+
+      requestAnimationFrame(animateFireworks);
+    }
+    animateFireworks();
+
+    // --- 5. Proposal Interaction ---
+    function yesClick() {
+      // 1. Visual Celebration
+      const duration = 3000;
+      const end = Date.now() + duration;
+
+      (function frame() {
+        confetti({
+          particleCount: 5,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: ['#ff2e63', '#08d9d6', '#ffffff']
+        });
+        confetti({
+          particleCount: 5,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: ['#ff2e63', '#08d9d6', '#ffffff']
+        });
+
+        if (Date.now() < end) {
+          requestAnimationFrame(frame);
+        }
+      }());
+
+      // Canvas Fireworks
+      createFirework(window.innerWidth / 2, window.innerHeight / 2);
+      setTimeout(() => createFirework(window.innerWidth / 3, window.innerHeight / 2.5), 300);
+      setTimeout(() => createFirework(window.innerWidth * 2 / 3, window.innerHeight / 2.5), 600);
+
+      // 2. Show Message
+      const btnGroup = document.querySelector('.btn-group-custom');
+      const successMsg = document.getElementById('success-msg');
+
+      // Hide buttons
+      btnGroup.style.display = 'none';
+
+      // Show text
+      successMsg.style.display = 'block';
+      setTimeout(() => { successMsg.style.opacity = '1'; }, 50);
+
+      // 3. WhatsApp Logic (Propose Day Theme)
+      setTimeout(() => {
+        let message =
+          `Hey ${herName} ❤️\n\n` +
+          `Happy Propose Day!\n\n` +
+          `I wanted to ask you this officially... Will you be mine forever? 😍\n\n` +
+          `I promise to love you, support you, and make you smile every single day.\n\n` +
+          `Yours forever,\n${yourName}`;
+
+        let url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, "_blank");
+      }, 2000);
+    }
+
+    // --- 6. "No" Button Logic ---
+    function moveNo() {
+      const noBtn = document.getElementById('noBtn');
+      const x = Math.random() * (window.innerWidth - noBtn.offsetWidth - 40) + 20;
+      const y = Math.random() * (window.innerHeight - noBtn.offsetHeight - 40) + 20;
+
+      noBtn.style.position = 'fixed';
+      noBtn.style.left = `${x}px`;
+      noBtn.style.top = `${y}px`;
+      noBtn.style.zIndex = '100';
+    }
+
+    // Handle Resize
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+  </script>
+</body>
+
+</html>
